@@ -83,13 +83,13 @@ func NewCoordinate(dimension int, coors ...float64) *Coordinate {
 func (c *Coordinate) ToString() string {
 	switch c.Dimension {
 	case Dimension_XY:
-		return fmt.Sprintf("(%v,%v)", c.X, c.Y)
+		return fmt.Sprintf("%v %v", c.X, c.Y)
 	case Dimension_XYZ:
-		return fmt.Sprintf("(%v,%v,%v)", c.X, c.Y, c.Z)
+		return fmt.Sprintf("%v %v %v", c.X, c.Y, c.Z)
 	case Dimension_XYM:
-		return fmt.Sprintf("(%v,%v,%v)", c.X, c.Y, c.M)
+		return fmt.Sprintf("%v %v %v", c.X, c.Y, c.M)
 	case Dimension_XYZM:
-		return fmt.Sprintf("(%v,%v,%v,%v)", c.X, c.Y, c.Z, c.M)
+		return fmt.Sprintf("%v %v %v %v", c.X, c.Y, c.Z, c.M)
 	default:
 		panic("coordinate demension error!")
 	}
