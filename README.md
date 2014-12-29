@@ -1,6 +1,16 @@
-saceis
-======
+#saceis
+==============
+## Geometry
+* Point
+* LineString
+* Ring
+* Polygon
+* Envelope
 
-##Install 
-
-    > go get github.com/enorzw/saceis
+```go
+type IGeometry interface {
+	String() string
+	WktType() string
+	Envelope() Envelope
+}
+```

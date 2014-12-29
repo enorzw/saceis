@@ -11,6 +11,7 @@ func TestCoordinate(t *testing.T) {
 
 	a := geometry.NewCoordinate(geometry.Dimension_XY, 119.232143, 49.123124)
 	fmt.Println(a)
+
 	aa := geometry.NewCoordinate(geometry.Dimension_XY, 116.232143, 45.123124)
 	fmt.Println(a.Distance(aa))
 
