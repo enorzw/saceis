@@ -1,5 +1,4 @@
 #saceis
-==============
 ## Geometry
 * Point
 * LineString
