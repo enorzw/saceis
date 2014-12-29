@@ -24,6 +24,15 @@ func (r Ring) Count() int {
 	return len(r)
 }
 
+func (r Ring) Length() float64 {
+	var count int = r.Count()
+	var length float64 = 0
+	for i := 0; i < count-1; i++ {
+		length += r[i].Distance(r[i+1])
+	}
+	return length
+}
+
 func (r Ring) IsClose() bool {
 	count := len(r)
 	if count <= 3 {

@@ -18,7 +18,7 @@ const (
 	Dimension_XYZM = 15
 )
 
-//坐标
+//坐标：支持二维、三维和M
 type Coordinate struct {
 	Dimension int
 	X         float64
@@ -27,7 +27,7 @@ type Coordinate struct {
 	M         float64
 }
 
-//创建坐标
+//创建坐标：参数dimension：Dimesion枚举，coors：坐标序列顺序为x、y、z、m，长度不能超过4
 func NewCoordinate(dimension int, coors ...float64) Coordinate {
 	coord := Coordinate{}
 	length := len(coors)
@@ -80,6 +80,7 @@ func NewCoordinate(dimension int, coors ...float64) Coordinate {
 	return coord
 }
 
+//将坐标转化为wkt格式的坐标字符串，在各个geometry的wkt转化中都有使用
 func (c Coordinate) String() string {
 	switch c.Dimension {
 	case Dimension_XY:

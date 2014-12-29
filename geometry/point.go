@@ -33,7 +33,16 @@ func (p Point) Distance(q Point) float64 {
 }
 
 func (p Point) String() string {
-	buf := "POINT (" + p.Coordinate.String() + ")"
+	buf := ""
+	if p.Coordinate.Dimension == Dimension_XY {
+		buf = "POINT (" + p.Coordinate.String() + ")"
+	} else if p.Coordinate.Dimension == Dimension_XYZ {
+		buf = "POINT Z(" + p.Coordinate.String() + ")"
+	} else if p.Coordinate.Dimension == Dimension_XYM {
+		buf = "POINT M(" + p.Coordinate.String() + ")"
+	} else if p.Coordinate.Dimension == Dimension_XYZM {
+		buf = "POINT ZM(" + p.Coordinate.String() + ")"
+	}
 	return buf
 }
 

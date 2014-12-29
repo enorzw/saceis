@@ -21,6 +21,15 @@ func (p LineString) Count() int {
 	return len(p)
 }
 
+func (l LineString) Length() float64 {
+	var count int = l.Count()
+	var length float64 = 0
+	for i := 0; i < count-1; i++ {
+		length += l[i].Distance(l[i+1])
+	}
+	return length
+}
+
 func (p LineString) String() string {
 	buf := "LINESTRING ("
 	count := p.Count()
